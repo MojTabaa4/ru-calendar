@@ -1,0 +1,61 @@
+# Official start dates of Lunar Hijri months in Iran.
+#
+# Iran begins each lunar month from moon sighting, so these dates can't be
+# computed. They follow Iran's official calendar (Calendar Center, Institute of
+# Geophysics, University of Tehran), read from the day-by-day Lunar Hijri dates
+# that time.ir shows for each Solar Hijri year. Update once a year, and when a
+# sighting moves a month. Outside this table Ruz falls back to Umm al-Qura and
+# marks the date as approximate.
+#
+#   end = "YYYY-MM-DD"            first day the table no longer covers
+#   [[year]]
+#   year = 1447                   AH year
+#   first_month = 1               month that starts[0] begins (default 1)
+#   starts = ["YYYY-MM-DD", ...]  Gregorian date each consecutive month begins
+#   source = "..."
+#
+# Consecutive starts must be 29 or 30 days apart (checked by tests). The last
+# month may be cut short by `end`.
+
+end = "2027-03-21"
+
+[[year]]
+year = 1446
+first_month = 9
+#         Ramadan       Shawwal       Dhu al-Qa'dah Dhu al-Hijjah
+starts = ["2025-03-02", "2025-03-31", "2025-04-29", "2025-05-28"]
+source = "official calendar 1404 SH via time.ir, read 2026-10-15"
+
+[[year]]
+year = 1447
+starts = [
+  "2025-06-27", # Muharram
+  "2025-07-26", # Safar
+  "2025-08-25", # Rabi' al-Awwal
+  "2025-09-24", # Rabi' al-Thani
+  "2025-10-23", # Jumada al-Awwal
+  "2025-11-22", # Jumada al-Thani
+  "2025-12-22", # Rajab
+  "2026-01-21", # Sha'ban
+  "2026-02-19", # Ramadan
+  "2026-03-21", # Shawwal
+  "2026-04-19", # Dhu al-Qa'dah
+  "2026-05-18", # Dhu al-Hijjah
+]
+source = "official calendars 1404 and 1405 SH via time.ir, read 2026-10-15"
+
+[[year]]
+year = 1448
+starts = [
+  "2026-06-16", # Muharram
+  "2026-07-16", # Safar
+  "2026-08-14", # Rabi' al-Awwal
+  "2026-09-13", # Rabi' al-Thani
+  "2026-10-12", # Jumada al-Awwal
+  "2026-11-11", # Jumada al-Thani
+  "2026-12-11", # Rajab
+  "2027-01-10", # Sha'ban
+  "2027-02-08", # Ramadan
+  "2027-03-10", # Shawwal (covered to the end of 1405 SH)
+]
+source = "official calendar 1405 SH via time.ir, read 2026-10-15"

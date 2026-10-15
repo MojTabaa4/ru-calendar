@@ -1,0 +1,15 @@
+/target
+/node_modules
+/dist
+/src-tauri/gen
+.DS_Store
+*.log
+
+# Local tool and editor settings
+/.claude
+/.idea
+/.vscode
+
+# Google OAuth client downloads (see README)
+google-client.json
+client_secret_*.json

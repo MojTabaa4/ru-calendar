@@ -1,0 +1,286 @@
+# Holidays and occasions shown by Ruz, written by the Ruz authors from public
+# sources (see SOURCES.md). A curated set, not a copy of any other app's list.
+#
+# Each [[group]] fixes calendar (persian | gregorian | hijri), category
+# (iranOfficial | iranHistorical | shiaExtra), subcategory (main | appendix |
+# professions) and default day_off / mourning / source for its rows.
+#
+# A row has an id, a month, and either `day` (a number, or "last" for the last
+# day of the month) or `weekday` + `nth` (1–5, or -1 for the last). Optional:
+# offset (days from that date, e.g. -1 for its eve), day_off, mourning,
+# since / until (Solar Hijri years), source.
+#
+# Hijri rows match Iran's official lunar dates (hijri_iran.toml). [[moved]] at the
+# end records years when the official calendar placed a day differently.
+
+default_source = "iran-official-calendar"
+
+# --- Official days off -----------------------------------------------------
+
+[[group]]
+calendar = "persian"
+category = "iranOfficial"
+subcategory = "main"
+day_off = true
+source = "iran-official-holidays"
+observance = [
+  { id = "nowruz-1", month = 1, day = 1, fa = "عید نوروز", en = "Nowruz" },
+  { id = "nowruz-2", month = 1, day = 2, fa = "عید نوروز", en = "Nowruz" },
+  { id = "nowruz-3", month = 1, day = 3, fa = "عید نوروز", en = "Nowruz" },
+  { id = "nowruz-4", month = 1, day = 4, fa = "عید نوروز", en = "Nowruz" },
+  { id = "islamic-republic-day", month = 1, day = 12, fa = "روز جمهوری اسلامی", en = "Islamic Republic Day" },
+  { id = "nature-day", month = 1, day = 13, fa = "روز طبیعت (سیزده‌به‌در)", en = "Nature Day (Sizdah Bedar)" },
+  { id = "khomeini-death", month = 3, day = 14, mourning = true, fa = "رحلت امام خمینی", en = "Death anniversary of Ayatollah Khomeini" },
+  { id = "khordad-15-uprising", month = 3, day = 15, fa = "قیام ۱۵ خرداد", en = "15 Khordad uprising" },
+  { id = "revolution-victory", month = 11, day = 22, fa = "پیروزی انقلاب اسلامی", en = "Victory of the Islamic Revolution" },
+  { id = "oil-nationalization", month = 12, day = 29, fa = "روز ملی شدن صنعت نفت", en = "Oil Nationalization Day" },
+]
+
+[[group]]
+calendar = "hijri"
+category = "iranOfficial"
+subcategory = "main"
+day_off = true
+source = "iran-official-holidays"
+observance = [
+  { id = "tasua", month = 1, day = 9, mourning = true, fa = "تاسوعای حسینی", en = "Tasua" },
+  { id = "ashura", month = 1, day = 10, mourning = true, fa = "عاشورای حسینی", en = "Ashura" },
+  { id = "arbaeen", month = 2, day = 20, mourning = true, fa = "اربعین حسینی", en = "Arbaeen" },
+  { id = "prophet-death", month = 2, day = 28, mourning = true, fa = "رحلت پیامبر اکرم و شهادت امام حسن مجتبی", en = "Death of Prophet Muhammad and martyrdom of Imam Hasan" },
+  { id = "imam-reza-martyrdom", month = 2, day = "last", mourning = true, fa = "شهادت امام رضا", en = "Martyrdom of Imam Reza" },
+  { id = "imam-askari-martyrdom", month = 3, day = 8, mourning = true, fa = "شهادت امام حسن عسکری", en = "Martyrdom of Imam Hasan al-Askari" },
+  { id = "prophet-birth", month = 3, day = 17, fa = "میلاد پیامبر اکرم و امام جعفر صادق", en = "Birth of Prophet Muhammad and Imam Ja'far al-Sadiq" },
+  { id = "fatimah-martyrdom", month = 6, day = 3, mourning = true, fa = "شهادت حضرت فاطمه زهرا", en = "Martyrdom of Fatimah al-Zahra" },
+  { id = "imam-ali-birth", month = 7, day = 13, fa = "ولادت امام علی و روز پدر", en = "Birth of Imam Ali; Father's Day" },
+  { id = "mabath", month = 7, day = 27, fa = "مبعث پیامبر اکرم", en = "Mab'ath of Prophet Muhammad" },
+  { id = "mahdi-birth", month = 8, day = 15, fa = "ولادت حضرت مهدی (نیمه شعبان)", en = "Birth of Imam Mahdi (mid-Sha'ban)" },
+  { id = "imam-ali-martyrdom", month = 9, day = 21, mourning = true, fa = "شهادت امام علی", en = "Martyrdom of Imam Ali" },
+  { id = "eid-al-fitr", month = 10, day = 1, fa = "عید فطر", en = "Eid al-Fitr" },
+  { id = "eid-al-fitr-2", month = 10, day = 2, fa = "تعطیل به مناسبت عید فطر", en = "Eid al-Fitr holiday" },
+  { id = "imam-sadiq-martyrdom", month = 10, day = 25, mourning = true, fa = "شهادت امام جعفر صادق", en = "Martyrdom of Imam Ja'far al-Sadiq" },
+  { id = "eid-al-adha", month = 12, day = 10, fa = "عید قربان", en = "Eid al-Adha" },
+  { id = "eid-al-ghadir", month = 12, day = 18, fa = "عید غدیر خم", en = "Eid al-Ghadir" },
+]
+
+# --- Official occasions (not days off) ---------------------------------------
+
+[[group]]
+calendar = "persian"
+category = "iranOfficial"
+subcategory = "main"
+observance = [
+  { id = "army-day", month = 1, day = 29, fa = "روز ارتش", en = "Army Day" },
+  { id = "persian-gulf-day", month = 2, day = 10, fa = "روز ملی خلیج فارس", en = "National Persian Gulf Day" },
+  { id = "teachers-day", month = 2, day = 12, fa = "روز معلم", en = "Teachers' Day" },
+  { id = "khorramshahr-liberation", month = 3, day = 3, fa = "آزادسازی خرمشهر", en = "Liberation of Khorramshahr" },
+  { id = "sacred-defence-week", month = 6, day = 31, fa = "آغاز هفته دفاع مقدس", en = "Start of Sacred Defence Week" },
+  { id = "pupils-day", month = 8, day = 13, fa = "روز ملی مبارزه با استکبار جهانی؛ روز دانش‌آموز", en = "National Day against Global Arrogance; Pupils' Day" },
+  { id = "university-students-day", month = 9, day = 16, fa = "روز دانشجو", en = "University Students' Day" },
+  { id = "khomeini-return", month = 11, day = 12, fa = "بازگشت امام خمینی به ایران", en = "Return of Ayatollah Khomeini to Iran" },
+  { id = "arbor-day", month = 12, day = 15, fa = "روز درختکاری", en = "Arbor Day" },
+]
+
+[[group]]
+calendar = "hijri"
+category = "iranOfficial"
+subcategory = "main"
+observance = [
+  { id = "imam-sajjad-martyrdom", month = 1, day = 12, mourning = true, fa = "شهادت امام زین‌العابدین", en = "Martyrdom of Imam al-Sajjad" },
+  { id = "hijrah", month = 3, day = 1, fa = "هجرت پیامبر اکرم از مکه به مدینه", en = "The Prophet's migration to Medina" },
+  { id = "unity-week", month = 3, day = 12, fa = "میلاد پیامبر اکرم به روایت اهل سنت؛ آغاز هفته وحدت", en = "Birth of the Prophet (Sunni account); start of Unity Week" },
+  { id = "imam-askari-birth", month = 4, day = 8, fa = "ولادت امام حسن عسکری", en = "Birth of Imam Hasan al-Askari" },
+  { id = "masumah-death", month = 4, day = 10, mourning = true, fa = "وفات حضرت معصومه", en = "Death of Fatimah al-Masumah" },
+  { id = "zaynab-birth", month = 5, day = 5, fa = "ولادت حضرت زینب؛ روز پرستار", en = "Birth of Zaynab; Nurses' Day" },
+  { id = "fatimah-birth", month = 6, day = 20, fa = "ولادت حضرت فاطمه؛ روز مادر", en = "Birth of Fatimah; Mother's Day" },
+  { id = "imam-baqir-birth", month = 7, day = 1, fa = "ولادت امام محمدباقر", en = "Birth of Imam al-Baqir" },
+  { id = "imam-hadi-martyrdom", month = 7, day = 3, mourning = true, fa = "شهادت امام علی‌النقی", en = "Martyrdom of Imam al-Hadi" },
+  { id = "imam-jawad-birth", month = 7, day = 10, fa = "ولادت امام محمدتقی", en = "Birth of Imam al-Jawad" },
+  { id = "zaynab-death", month = 7, day = 15, mourning = true, fa = "وفات حضرت زینب", en = "Death of Zaynab" },
+  { id = "imam-kazim-martyrdom", month = 7, day = 25, mourning = true, fa = "شهادت امام موسی کاظم", en = "Martyrdom of Imam al-Kazim" },
+  { id = "imam-husayn-birth", month = 8, day = 3, fa = "ولادت امام حسین؛ روز پاسدار", en = "Birth of Imam Husayn; Guards' Day" },
+  { id = "abbas-birth", month = 8, day = 4, fa = "ولادت حضرت ابوالفضل؛ روز جانباز", en = "Birth of Abbas; Veterans' Day" },
+  { id = "imam-sajjad-birth", month = 8, day = 5, fa = "ولادت امام زین‌العابدین", en = "Birth of Imam al-Sajjad" },
+  { id = "ali-akbar-birth", month = 8, day = 11, fa = "ولادت حضرت علی‌اکبر؛ روز جوان", en = "Birth of Ali al-Akbar; Youth Day" },
+  { id = "imam-hasan-birth", month = 9, day = 15, fa = "ولادت امام حسن مجتبی", en = "Birth of Imam Hasan" },
+  { id = "qadr-night-19", month = 9, day = 18, fa = "شب قدر", en = "Night of Qadr" },
+  { id = "imam-ali-wounded", month = 9, day = 19, mourning = true, fa = "ضربت خوردن امام علی", en = "Imam Ali is wounded" },
+  { id = "qadr-night-21", month = 9, day = 20, fa = "شب قدر", en = "Night of Qadr" },
+  { id = "qadr-night-23", month = 9, day = 22, fa = "شب قدر", en = "Night of Qadr" },
+  { id = "masumah-birth", month = 11, day = 1, fa = "ولادت حضرت معصومه؛ روز دختران", en = "Birth of Fatimah al-Masumah; Girls' Day" },
+  { id = "imam-reza-birth", month = 11, day = 11, fa = "ولادت امام رضا", en = "Birth of Imam Reza" },
+  { id = "imam-jawad-martyrdom", month = 11, day = 29, mourning = true, fa = "شهادت امام محمدتقی", en = "Martyrdom of Imam al-Jawad" },
+  { id = "imam-baqir-martyrdom", month = 12, day = 7, mourning = true, fa = "شهادت امام محمدباقر", en = "Martyrdom of Imam al-Baqir" },
+  { id = "arafah", month = 12, day = 9, fa = "روز عرفه", en = "Day of Arafah" },
+  { id = "imam-hadi-birth", month = 12, day = 15, fa = "ولادت امام علی‌النقی", en = "Birth of Imam al-Hadi" },
+  { id = "imam-kazim-birth", month = 12, day = 20, fa = "ولادت امام موسی کاظم", en = "Birth of Imam al-Kazim" },
+]
+
+[[group]]
+calendar = "persian"
+category = "iranOfficial"
+subcategory = "appendix"
+observance = [
+  { id = "attar-day", month = 1, day = 25, fa = "روز بزرگداشت عطار نیشابوری", en = "Attar of Nishapur Day" },
+  { id = "saadi-day", month = 2, day = 1, fa = "روز بزرگداشت سعدی", en = "Saadi Day" },
+  { id = "sheikh-bahai-day", month = 2, day = 3, fa = "روز بزرگداشت شیخ بهایی؛ روز ملی کارآفرینی", en = "Sheikh Baha'i Day; National Entrepreneurship Day" },
+  { id = "shiraz-day", month = 2, day = 15, fa = "روز شیراز", en = "Shiraz Day" },
+  { id = "ferdowsi-day", month = 2, day = 25, fa = "روز بزرگداشت فردوسی و پاسداشت زبان فارسی", en = "Ferdowsi Day and Persian Language Day" },
+  { id = "khayyam-day", month = 2, day = 28, fa = "روز بزرگداشت خیام", en = "Omar Khayyam Day" },
+  { id = "mulla-sadra-day", month = 3, day = 1, fa = "روز بزرگداشت ملاصدرا", en = "Mulla Sadra Day" },
+  { id = "productivity-day", month = 3, day = 1, fa = "روز بهره‌وری و بهینه‌سازی مصرف", en = "Productivity and Conservation Day" },
+  { id = "dezful-day", month = 3, day = 4, fa = "روز دزفول؛ روز مقاومت و پایداری", en = "Dezful Day; Day of Resistance" },
+  { id = "flowers-day", month = 3, day = 25, fa = "روز ملی گل و گیاه", en = "National Flowers and Plants Day" },
+  { id = "judiciary-day", month = 4, day = 7, fa = "روز قوه قضاییه", en = "Judiciary Day" },
+  { id = "chemical-weapons-day", month = 4, day = 8, fa = "روز مبارزه با سلاح‌های شیمیایی و میکروبی", en = "Day against Chemical and Biological Weapons" },
+  { id = "industry-day", month = 4, day = 10, fa = "روز صنعت و معدن", en = "Industry and Mining Day" },
+  { id = "saeb-day", month = 4, day = 10, fa = "روز بزرگداشت صائب تبریزی", en = "Saeb Tabrizi Day" },
+  { id = "pen-day", month = 4, day = 14, fa = "روز قلم", en = "Pen Day" },
+  { id = "welfare-day", month = 4, day = 25, fa = "روز بهزیستی و تأمین اجتماعی", en = "Welfare and Social Security Day" },
+  { id = "suhrawardi-day", month = 5, day = 8, fa = "روز بزرگداشت شیخ شهاب‌الدین سهروردی", en = "Suhrawardi Day" },
+  { id = "constitution-decree", month = 5, day = 14, fa = "سالروز صدور فرمان مشروطیت", en = "Anniversary of the Constitutional Decree" },
+  { id = "government-week", month = 6, day = 2, fa = "آغاز هفته دولت", en = "Start of Government Week" },
+  { id = "anti-terrorism-day", month = 6, day = 8, fa = "روز مبارزه با تروریسم", en = "Day against Terrorism" },
+  { id = "biruni-day", month = 6, day = 13, fa = "روز بزرگداشت ابوریحان بیرونی", en = "Al-Biruni Day" },
+  { id = "cinema-day", month = 6, day = 21, fa = "روز سینما", en = "Cinema Day" },
+  { id = "persian-poetry-day", month = 6, day = 27, fa = "روز شعر و ادب پارسی؛ بزرگداشت شهریار", en = "Persian Poetry Day; Shahriar Day" },
+  { id = "shams-day", month = 7, day = 7, fa = "روز بزرگداشت شمس تبریزی", en = "Shams Tabrizi Day" },
+  { id = "rumi-day", month = 7, day = 8, fa = "روز بزرگداشت مولوی", en = "Rumi Day" },
+  { id = "children-day", month = 7, day = 16, fa = "روز ملی کودک", en = "National Children's Day" },
+  { id = "hafez-day", month = 7, day = 20, fa = "روز بزرگداشت حافظ", en = "Hafez Day" },
+  { id = "sports-day", month = 7, day = 26, fa = "روز تربیت بدنی و ورزش", en = "Physical Education and Sports Day" },
+  { id = "bayhaqi-day", month = 8, day = 1, fa = "روز بزرگداشت ابوالفضل بیهقی", en = "Bayhaqi Day" },
+  { id = "book-day", month = 8, day = 24, fa = "روز کتاب و کتابخوانی", en = "Book and Reading Day" },
+  { id = "basij-day", month = 9, day = 5, fa = "روز بسیج مستضعفان", en = "Basij Day" },
+  { id = "navy-day", month = 9, day = 7, fa = "روز نیروی دریایی", en = "Navy Day" },
+  { id = "research-day", month = 9, day = 25, fa = "روز پژوهش", en = "Research Day" },
+  { id = "air-force-day", month = 11, day = 19, fa = "روز نیروی هوایی", en = "Air Force Day" },
+  { id = "tusi-day", month = 12, day = 5, fa = "روز بزرگداشت خواجه نصیرالدین طوسی", en = "Nasir al-Din Tusi Day" },
+  { id = "parvin-day", month = 12, day = 25, fa = "روز بزرگداشت پروین اعتصامی", en = "Parvin E'tesami Day" },
+]
+
+[[group]]
+calendar = "persian"
+category = "iranOfficial"
+subcategory = "professions"
+observance = [
+  { id = "dentists-day", month = 1, day = 23, fa = "روز دندان‌پزشک", en = "Dentists' Day" },
+  { id = "lab-sciences-day", month = 1, day = 30, fa = "روز علوم آزمایشگاهی", en = "Laboratory Sciences Day" },
+  { id = "architecture-day", month = 2, day = 3, fa = "روز معماری", en = "Architecture Day" },
+  { id = "psychologists-day", month = 2, day = 9, fa = "روز ملی روان‌شناس و مشاور", en = "Psychologists' and Counselors' Day" },
+  { id = "public-relations-day", month = 2, day = 27, fa = "روز ارتباطات و روابط عمومی", en = "Communications and Public Relations Day" },
+  { id = "journalists-day", month = 5, day = 17, fa = "روز خبرنگار", en = "Journalists' Day" },
+  { id = "physicians-day", month = 6, day = 1, fa = "روز بزرگداشت ابن‌سینا؛ روز پزشک", en = "Avicenna Day; Physicians' Day" },
+  { id = "pharmacists-day", month = 6, day = 5, fa = "روز بزرگداشت رازی؛ روز داروساز", en = "Razi Day; Pharmacists' Day" },
+  { id = "printing-day", month = 6, day = 11, fa = "روز صنعت چاپ", en = "Printing Industry Day" },
+  { id = "firefighters-day", month = 7, day = 7, fa = "روز آتش‌نشانی و ایمنی", en = "Firefighting and Safety Day" },
+  { id = "veterinarians-day", month = 7, day = 14, fa = "روز دامپزشکی", en = "Veterinary Day" },
+  { id = "statistics-day", month = 8, day = 1, fa = "روز آمار و برنامه‌ریزی", en = "Statistics and Planning Day" },
+  { id = "insurance-day", month = 9, day = 13, fa = "روز بیمه", en = "Insurance Day" },
+  { id = "accountants-day", month = 9, day = 15, fa = "روز حسابدار", en = "Accountants' Day" },
+  { id = "engineers-day", month = 12, day = 5, fa = "روز مهندس", en = "Engineers' Day" },
+  { id = "lawyers-day", month = 12, day = 7, fa = "روز وکیل مدافع", en = "Defence Lawyers' Day" },
+]
+
+# International days, as listed in the official calendar.
+[[group]]
+calendar = "gregorian"
+category = "iranOfficial"
+subcategory = "appendix"
+source = "un-international-days"
+observance = [
+  { id = "gregorian-new-year", month = 1, day = 1, fa = "آغاز سال نو میلادی", en = "New Year's Day" },
+  { id = "womens-day", month = 3, day = 8, fa = "روز جهانی زن", en = "International Women's Day" },
+  { id = "water-day", month = 3, day = 22, fa = "روز جهانی آب", en = "World Water Day" },
+  { id = "meteorological-day", month = 3, day = 23, fa = "روز جهانی هواشناسی", en = "World Meteorological Day" },
+  { id = "theatre-day", month = 3, day = 27, fa = "روز جهانی تئاتر", en = "World Theatre Day" },
+  { id = "health-day", month = 4, day = 7, fa = "روز جهانی بهداشت", en = "World Health Day" },
+  { id = "earth-day", month = 4, day = 22, fa = "روز زمین", en = "Earth Day" },
+  { id = "labour-day", month = 5, day = 1, fa = "روز جهانی کارگر", en = "International Workers' Day" },
+  { id = "red-crescent-day", month = 5, day = 8, fa = "روز جهانی صلیب سرخ و هلال احمر", en = "World Red Cross and Red Crescent Day" },
+  { id = "museum-day", month = 5, day = 18, fa = "روز جهانی موزه", en = "International Museum Day" },
+  { id = "no-tobacco-day", month = 5, day = 31, fa = "روز جهانی بدون دخانیات", en = "World No Tobacco Day" },
+  { id = "environment-day", month = 6, day = 5, fa = "روز جهانی محیط زیست", en = "World Environment Day" },
+  { id = "blood-donor-day", month = 6, day = 14, fa = "روز جهانی اهدای خون", en = "World Blood Donor Day" },
+  { id = "anti-drug-day", month = 6, day = 26, fa = "روز جهانی مبارزه با مواد مخدر", en = "International Day against Drug Abuse" },
+  { id = "peace-day", month = 9, day = 21, fa = "روز جهانی صلح", en = "International Day of Peace" },
+  { id = "tourism-day", month = 9, day = 27, fa = "روز جهانی جهانگردی", en = "World Tourism Day" },
+  { id = "older-persons-day", month = 10, day = 1, fa = "روز جهانی سالمندان", en = "International Day of Older Persons" },
+  { id = "world-teachers-day", month = 10, day = 5, fa = "روز جهانی معلم", en = "World Teachers' Day" },
+  { id = "post-day", month = 10, day = 9, fa = "روز جهانی پست", en = "World Post Day" },
+  { id = "food-day", month = 10, day = 16, fa = "روز جهانی غذا", en = "World Food Day" },
+  { id = "diabetes-day", month = 11, day = 14, fa = "روز جهانی دیابت", en = "World Diabetes Day" },
+  { id = "aids-day", month = 12, day = 1, fa = "روز جهانی ایدز", en = "World AIDS Day" },
+  { id = "disability-day", month = 12, day = 3, fa = "روز جهانی افراد دارای معلولیت", en = "International Day of Persons with Disabilities" },
+  { id = "human-rights-day", month = 12, day = 10, fa = "روز جهانی حقوق بشر", en = "Human Rights Day" },
+  { id = "christmas", month = 12, day = 25, fa = "میلاد حضرت عیسی مسیح", en = "Christmas" },
+]
+
+# --- Historical Iranian festivals --------------------------------------------
+
+[[group]]
+calendar = "persian"
+category = "iranHistorical"
+subcategory = "main"
+source = "iranian-festivals"
+observance = [
+  { id = "zoroaster-birth", month = 1, day = 6, fa = "زادروز زرتشت (خوردادسال)", en = "Birth of Zoroaster (Khordad Sal)" },
+  { id = "abangah", month = 1, day = 10, fa = "جشن آبانگاه", en = "Abangah" },
+  { id = "soroushgan", month = 1, day = 17, fa = "جشن سروشگان", en = "Soroushgan" },
+  { id = "farvardingan", month = 1, day = 19, fa = "جشن فروردینگان", en = "Farvardingan" },
+  { id = "giah-avari", month = 2, day = 2, fa = "جشن گیاه‌آوری", en = "Giah-avari (gathering of herbs)" },
+  { id = "ordibeheshtgan", month = 2, day = 3, fa = "جشن اردیبهشتگان", en = "Ordibeheshtgan" },
+  { id = "chehelom-nowruz", month = 2, day = 10, fa = "جشن چهلم نوروز", en = "Fortieth day of Nowruz" },
+  { id = "mid-spring", month = 2, day = 15, fa = "جشن میانه بهار", en = "Mid-spring festival" },
+  { id = "khordadgan", month = 3, day = 6, fa = "جشن خردادگان", en = "Khordadgan" },
+  { id = "ab-pashunak", month = 4, day = 1, fa = "جشن آب‌پاشونک؛ آغاز تابستان", en = "Ab-pashunak; start of summer" },
+  { id = "tirgan", month = 4, day = 13, fa = "جشن تیرگان", en = "Tirgan" },
+  { id = "amordadgan", month = 5, day = 7, fa = "جشن امردادگان", en = "Amordadgan" },
+  { id = "chelleh-summer", month = 5, day = 10, fa = "جشن چلهٔ تابستان", en = "Midsummer (chelleh) festival" },
+  { id = "shahrivargan", month = 6, day = 4, fa = "جشن شهریورگان", en = "Shahrivargan" },
+  { id = "mehregan", month = 7, day = 10, fa = "جشن مهرگان", en = "Mehregan" },
+  { id = "cyrus-day", month = 8, day = 7, fa = "روز کوروش بزرگ", en = "Cyrus the Great Day" },
+  { id = "abangan", month = 8, day = 10, fa = "جشن آبانگان", en = "Abangan" },
+  { id = "mid-autumn", month = 8, day = 15, fa = "جشن میانه پاییز", en = "Mid-autumn festival" },
+  { id = "azar-jashn", month = 9, day = 1, fa = "آذرجشن", en = "Azar Jashn" },
+  { id = "azargan", month = 9, day = 9, fa = "جشن آذرگان", en = "Azargan" },
+  { id = "yalda", month = 9, day = 30, fa = "شب یلدا", en = "Yalda Night" },
+  { id = "khorram-ruz", month = 10, day = 1, fa = "جشن خرم‌روز؛ نخستین دیگان", en = "Khorram-ruz; first Deygan" },
+  { id = "zoroaster-death", month = 10, day = 5, fa = "سالروز درگذشت زرتشت", en = "Death anniversary of Zoroaster" },
+  { id = "deygan-2", month = 10, day = 8, fa = "دومین جشن دیگان", en = "Second Deygan" },
+  { id = "deygan-3", month = 10, day = 15, fa = "سومین جشن دیگان", en = "Third Deygan" },
+  { id = "deygan-4", month = 10, day = 23, fa = "چهارمین جشن دیگان", en = "Fourth Deygan" },
+  { id = "bahmangan", month = 11, day = 2, fa = "جشن بهمنگان", en = "Bahmangan" },
+  { id = "sadeh", month = 11, day = 10, fa = "جشن سده", en = "Sadeh" },
+  { id = "mid-winter", month = 11, day = 15, fa = "جشن میانه زمستان", en = "Mid-winter festival" },
+  { id = "sepandarmazgan", month = 11, day = 29, fa = "جشن سپندارمذگان", en = "Sepandarmazgan" },
+  # The evening before the year's last Wednesday.
+  { id = "chaharshanbe-suri", month = 12, weekday = "wednesday", nth = -1, offset = -1, fa = "چهارشنبه‌سوری", en = "Chaharshanbe Suri" },
+]
+
+# --- Further Shia occasions --------------------------------------------------
+
+[[group]]
+calendar = "hijri"
+category = "shiaExtra"
+subcategory = "main"
+source = "shia-occasions"
+observance = [
+  { id = "islamic-new-year", month = 1, day = 1, fa = "آغاز سال نو هجری قمری", en = "Islamic New Year" },
+  { id = "imam-sajjad-martyrdom-25", month = 1, day = 25, mourning = true, fa = "شهادت امام زین‌العابدین به روایتی", en = "Martyrdom of Imam al-Sajjad (another account)" },
+  { id = "fatimah-martyrdom-75", month = 5, day = 13, mourning = true, fa = "شهادت حضرت فاطمه به روایت ۷۵ روز", en = "Martyrdom of Fatimah (75-day account)" },
+  { id = "ramadan-start", month = 9, day = 1, fa = "آغاز ماه رمضان", en = "Start of Ramadan" },
+  { id = "baqi-destruction", month = 10, day = 8, fa = "سالروز تخریب قبرستان بقیع", en = "Anniversary of the destruction of al-Baqi'" },
+  { id = "dahw-al-ard", month = 11, day = 25, fa = "روز دحوالارض", en = "Dahw al-Ard" },
+  { id = "ali-fatimah-marriage", month = 12, day = 1, fa = "سالروز ازدواج امام علی و حضرت فاطمه", en = "Marriage of Imam Ali and Fatimah" },
+  { id = "mubahala", month = 12, day = 24, fa = "روز مباهله", en = "Day of Mubahala" },
+]
+
+# --- Years the official calendar placed a day differently -----------------------
+
+# Safar 1447 turned out to have 30 days, but the official calendar, printed
+# earlier, put the end-of-Safar holiday on 29 Safar (1 Shahrivar 1404).
+[[moved]]
+id = "imam-reza-martyrdom"
+year = 1447
+date = "2025-08-23"
+source = "official calendar 1404 SH via time.ir, read 2026-10-15"

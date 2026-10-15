@@ -1,0 +1,33 @@
+[package]
+name = "ruz-core"
+description = "Persian (Solar Hijri), Gregorian and Lunar Hijri calendar engine for Ruz"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[features]
+default = ["icu"]
+# Umm al-Qura base for Lunar Hijri dates. Without it, the tabular calendar is used.
+icu = ["dep:icu_calendar"]
+# Export TypeScript bindings for the view models (run `cargo test -p ruz-core --features ts`).
+ts = ["dep:ts-rs"]
+
+[dependencies]
+icu_calendar = { version = "2.3.0", optional = true }
+jiff = "0.2.38"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+thiserror = "2.0.21"
+toml = "1.1.8"
+ts-rs = { version = "12.0.1", optional = true }
+
+[dev-dependencies]
+chrono = "0.4.45"
+# Independent Persian calendar implementation used to cross-check ours.
+icu_calendar = "2.3.0"
+salah = "0.7.6"
+
+[lints]
+workspace = true

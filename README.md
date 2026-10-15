@@ -54,11 +54,33 @@ bun run check
 After changing view-model types in `ruz-core`, regenerate the TypeScript types in
 `src/lib/bindings` with `cargo test -p ruz-core --features ts`.
 
+## Install on macOS
+
+```bash
+scripts/build-app.sh
+```
+
+This builds a release bundle, signs it, installs it as `/Applications/Ruz.app` and
+launches it. `--no-launch` installs without launching; `RUZ_INSTALL=~/Applications/Ruz.app`
+installs elsewhere. It needs `rcodesign` once:
+
+```bash
+cargo install apple-codesign --locked --bin rcodesign
+```
+
+The bundle is signed with a self-signed certificate that `scripts/make-cert.sh`
+creates on the first run, in `~/Library/Application Support/ai.intelcad.ruz/dev-signing`.
+No keychain is used. Because the signature names that certificate rather than the
+binary's hash, macOS keeps the Calendar and Location permissions, and Keychain
+access to the Google sign-ins, across rebuilds. Keep the certificate: a new one
+resets them. `scripts/verify-app.sh` checks an installed bundle.
+
 ## macOS Calendar and location
 
 On macOS, Ruz shows your Calendar events and Birthdays in the month view and can
 use your location for prayer times. macOS only asks for these permissions for a
-real app, so test them with a bundle rather than `tauri dev`:
+real app, so test them with a bundle rather than `tauri dev`. `scripts/build-app.sh`
+installs one; for a quick debug bundle:
 
 ```bash
 bun run tauri build --debug --bundles app
